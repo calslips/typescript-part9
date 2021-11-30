@@ -1,4 +1,4 @@
-type Operation = 'multiply' | 'add' | 'divide';
+export type Operation = 'multiply' | 'add' | 'divide';
 
 type Result = number;
 
@@ -14,16 +14,18 @@ const calculator = (a: number, b: number, op: Operation): Result => {
     default:
       throw new Error('Operation is not multiply, add or divide!');
   }
-}
+};
 
 try {
-  console.log(calculator(3, 6, 'multiply'))
+  console.log(calculator(3, 6, 'multiply'));
 } catch (error: unknown) {
-  let errorMessage = 'Something went wrong.'
+  let errorMessage = 'Something went wrong.';
   if (error instanceof Error) {
     errorMessage += ' Error: ' + error.message;
   }
   console.log(errorMessage);
 }
 
-console.log(process.argv)
+console.log(process.argv);
+
+export { calculator };
